@@ -1,0 +1,31 @@
+### IntelliJ IDEA ###
+.idea/
+*.iml
+out/
+
+### Maven ###
+target/
+**/target/
+
+### Logs ###
+*.log
+
+### Tomcat exploded artifacts ###
+*war_exploded/
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Build ###
+/build/
+/dist/
+
+### Other ###
+*.cache
