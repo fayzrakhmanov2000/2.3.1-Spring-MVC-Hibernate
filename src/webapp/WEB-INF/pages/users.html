@@ -18,7 +18,7 @@
             <th scope="col">name</th>
             <th scope="col">surname</th>
             <th scope="col">age</th>
-            <th scope="col">operations</th> <!-- новая колонка -->
+            <th scope="col">operations</th>
         </tr>
         </thead>
         <tbody>
@@ -28,13 +28,11 @@
             <td th:text="${user.surname}"></td>
             <td th:text="${user.age}"></td>
             <td>
-                <!-- Update -->
                 <a class="btn btn-primary btn-sm"
                    th:href="@{/updateInfo(userId=${user.id})}">
                     Update
                 </a>
-
-                <!-- Delete -->
+                
                 <a class="btn btn-danger btn-sm ms-2"
                    th:href="@{/deleteUser(userId=${user.id})}">
                     Delete

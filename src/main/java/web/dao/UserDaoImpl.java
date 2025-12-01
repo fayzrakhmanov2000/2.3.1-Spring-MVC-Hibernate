@@ -1,8 +1,5 @@
 package web.dao;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
@@ -18,19 +15,18 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-
-        return  entityManager.createQuery("select u from User u"
-                , User.class).getResultList();
-
+        return entityManager.createQuery("select u from User u", User.class)
+                .getResultList();
     }
 
     @Override
-    public void saveUser(User user) {
-        if (user.getId() == 0) {
-            entityManager.persist(user);
-        } else {
-            entityManager.merge(user);
-        }
+    public void addUser(User user) {
+        entityManager.persist(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        entityManager.merge(user);
     }
 
     @Override
@@ -45,5 +41,4 @@ public class UserDaoImpl implements UserDao {
             entityManager.remove(user);
         }
     }
-
 }
